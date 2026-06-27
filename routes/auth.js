@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-const { getPool, sql } = require('../config/db');
+const { pool } = require('../config/db');
 
 // POST /api/auth/login
 router.post('/login', async (req, res) => {

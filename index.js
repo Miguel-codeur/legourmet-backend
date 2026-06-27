@@ -14,7 +14,11 @@ const parametresRoutes = require('./routes/parametres');
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+    origin: ['https://legourmet-frontend.vercel.app', 'http://localhost:5500', 'http://127.0.0.1:5500'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 
 // Routes
